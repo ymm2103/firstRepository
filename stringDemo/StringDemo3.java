@@ -6,33 +6,33 @@ public class StringDemo3 {
 
 	public static void main(String[] args) throws UnsupportedEncodingException {
 	
-		String str="aÖĞb";
+		String str="aä¸­b";
 		
-		//utf-8ÏÂ£¬ÖĞ-->-28,-72,-83,Ê¹ÓÃ3¸ö×Ö½Ú´æ·ÅÒ»¸öÖĞÎÄ×Ö·û
+		//utf-8ä¸‹ï¼Œä¸­-->-28,-72,-83,ä½¿ç”¨3ä¸ªå­—èŠ‚å­˜æ”¾ä¸€ä¸ªä¸­æ–‡å­—ç¬¦
 		//byte[] arr=str.getBytes("utf-8");
 		
-		//GBKÏÂ£¬ÖĞ-->-42,-48,Ê¹ÓÃ2¸ö×Ö½Ú´æ·ÅÒ»¸öÖĞÎÄ×Ö·û
+		//GBKä¸‹ï¼Œä¸­-->-42,-48,ä½¿ç”¨2ä¸ªå­—èŠ‚å­˜æ”¾ä¸€ä¸ªä¸­æ–‡å­—ç¬¦
 		//byte[] arr=str.getBytes("GBK");
 		
-		//iso8859-1ÏÂ£¬ÖĞ-->63,Ê¹ÓÃÒ»¸ö×Ö½Ú´æ·ÅÒ»¸öÖĞÎÄ×Ö·û
+		//iso8859-1ä¸‹ï¼Œä¸­-->63,ä½¿ç”¨ä¸€ä¸ªå­—èŠ‚å­˜æ”¾ä¸€ä¸ªä¸­æ–‡å­—ç¬¦
 		//byte[] arr=str.getBytes("iso8859-1");
 		//System.out.println((char)63);
 		
-		//big5ÏÂ£¬ÖĞ-->-92,-92,Ê¹ÓÃÁ½¸ö×Ö½Ú´æ·ÅÒ»¸öÖĞÎÄ×Ö·û
+		//big5ä¸‹ï¼Œä¸­-->-92,-92,ä½¿ç”¨ä¸¤ä¸ªå­—èŠ‚å­˜æ”¾ä¸€ä¸ªä¸­æ–‡å­—ç¬¦
 		byte[] arr=str.getBytes("big5");
 		byte[] big5={-92,-92};
 		System.out.println(new String(big5,"big5"));
 		
 		
-		//\u570bÊÇ·±Ìå‡ø
+		//\u570bæ˜¯ç¹ä½“åœ‹
 		String guo="\u570b";
 			
-		//utf-8:‡ø,-27 -100 -117,3¸ö×Ö½Ú±íÊ¾
+		//utf-8:åœ‹,-27 -100 -117,3ä¸ªå­—èŠ‚è¡¨ç¤º
 		arr=guo.getBytes("utf-8");
 		
-		//big5£º‡ø£¬-80£¬-22,2¸ö×Ö½Ú±íÊ¾
+		//big5ï¼šåœ‹ï¼Œ-80ï¼Œ-22,2ä¸ªå­—èŠ‚è¡¨ç¤º
 		arr=guo.getBytes("big5");
-		//new String(),Í¨¹ı×Ö·û¼¯¶Ôbyte[]½øĞĞ½âÂë£¬×ª±ä³É×Ö·û´®
+		//new String(),é€šè¿‡å­—ç¬¦é›†å¯¹byte[]è¿›è¡Œè§£ç ï¼Œè½¬å˜æˆå­—ç¬¦ä¸²
 		System.out.println(new String(new byte[] {-80,-22},"big5"));
 		
 		String asc="abcde";
